@@ -12,7 +12,7 @@ goto vsnb
 Clone this repo, then add your configuration and an alias to your `.bashrc` or `.zshrc`.
 
 ```bash
-export GOTO_WORKSPACE=$HOME/code
+export GOTO_WORKSPACE="$HOME/code"
 export GOTO_IGNORE='professor-cam training'
 alias goto="source $HOME/scripts/goto/goto.sh"
 ```
@@ -23,6 +23,8 @@ alias goto="source $HOME/scripts/goto/goto.sh"
 For example, `goto igm` is equivalent to `cd $GOTO_WORKSPACE/int-gel-matter`.
 
 Providing the full name of a project also works, for example `goto professor-cam`.
+
+Using `goto` with no arguments will take you to the root of your workspace. 
 
 ## Configure
 
