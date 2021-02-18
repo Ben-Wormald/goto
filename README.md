@@ -15,6 +15,7 @@ Clone this repo, then add your configuration and an alias to your `.bashrc` or `
 export GOTO_WORKSPACE="$HOME/code"
 export GOTO_IGNORE='professor-cam training'
 alias goto="source $HOME/scripts/goto/goto.sh"
+alias gocode="$HOME/scripts/goto/goto.sh -c"
 ```
 
 ## Use
