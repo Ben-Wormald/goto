@@ -22,9 +22,11 @@ alias goto="source $HOME/scripts/goto/goto.sh"
 `goto` can be used to jump to a project in your workspace by its initials (where the folder name is hyphenated).
 For example, `goto igm` is equivalent to `cd $GOTO_WORKSPACE/int-gel-matter`.
 
-Providing the full name of a project also works, for example `goto professor-cam`.
+Providing the full name of a project also works, for example `goto int-gel-matter`.
 
-Using `goto` with no arguments will take you to the root of your workspace. 
+Using `goto` with no arguments will take you to the root of your workspace.
+
+Use the `-c` flag to launch the project in VS Code, e.g. `goto -c igm`. 
 
 ## Configure
 

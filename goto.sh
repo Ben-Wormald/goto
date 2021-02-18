@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
 
+usage='Usage: goto [-c] target'
+
 workspace=${GOTO_WORKSPACE:-$HOME}
 ignoreDirs=${GOTO_IGNORE:-'professor-cam'}
+mode='cd'
+
+while getopts ":c" opt; do
+  case ${opt} in
+    c ) mode='code'
+      ;;
+    \? ) echo "$usage"
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+if [[ $1 == '' ]]; then
+  echo "$usage"
+  exit 1
+fi
 
 target=''
 for dir in $(ls $workspace); do
@@ -29,4 +47,8 @@ if [[ $target == '' ]]; then
   esac
 fi
 
-cd "$workspace/$target"
+if [[ $mode == 'cd' ]]; then
+  cd "$workspace/$target"
+elif [[ $mode == 'code' ]]; then
+  code "$workspace/$target"
+fi
