@@ -14,11 +14,9 @@ while getopts ":c" opt; do
       ;;
   esac
 done
-shift $((OPTIND -1))
 
-if [[ $1 == '' ]]; then
-  echo "$usage"
-  exit 1
+if [[ $# > 1 ]]; then
+  shift $((OPTIND -1))
 fi
 
 target=''
